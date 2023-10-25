@@ -9,7 +9,7 @@ class Square:
         Args:
             size: length of side of the square.
         """
-        self.__size = size
+        self.size = size
 
     def area(self):
         """Return the current area of the square."""
