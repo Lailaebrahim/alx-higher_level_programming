@@ -5,7 +5,7 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class Test_max_integer(unittest.TestCase):
+class TestMaxInteger(unittest.TestCase):
     """ A class to make a test suit for max_integer method."""
     def test_no_arg(self):
         """Method to Test for NO argument Case"""
@@ -21,19 +21,19 @@ class Test_max_integer(unittest.TestCase):
 
     def test_ordered_list(self):
         """Method to Test for ordered list case"""
-        self.assertEqual(max_integer([1, 2, 3], 3)
+        self.assertEqual(max_integer([1, 2, 3]), 3)
 
     def test_unordered_list(self):
         """Method to Test for unordered list case"""
-        self.assertEqual(max_integer([3, 1, 2], 3)
+        self.assertEqual(max_integer([3, 1, 2]), 3)
 
     def test_negative_list(self):
         """Method to Test for negative list case"""
-        self.assertEqual(max_integer([-5, -10, -2, -8, -15, -3], -2)
+        self.assertEqual(max_integer([-5, -10, -2, -8, -15, -3]), -2)
 
     def test_positive_negative_list(self):
         """Method to Test for positive and negative list"""
-        self.assertEqual(max_integer([-5, -10, 2, 8, -15, -3, 0], 8)
+        self.assertEqual(max_integer([-5, -10, 2, 8, -15, -3, 0]), 8)
 
     def test_positive_negative_large(self):
         """Method to Test for positive and negative large numbers list"""
@@ -50,18 +50,18 @@ class Test_max_integer(unittest.TestCase):
 
     def test_int_float_list(self):
         """Method to Test for positive int and floats"""
-        self.assertEqual(max_integer([2, 3.5, 1, 7.2, 5], 7.2)
+        self.assertEqual(max_integer([2, 3.5, 1, 7.2, 5]), 7.2)
 
     def test_int_float_negative_list(self):
         """Method to Test for positive and negative int and floats"""
-        self.assertEqual(max_integer([2, -3.5, 1, -7.2, 5], 5)
+        self.assertEqual(max_integer([2, -3.5, 1, -7.2, 5]), 5)
 
     def test_int_float_negative_large_list(self):
         """Method to Test for positive and negative large int and floats"""
         self.assertEqual(max_integer([12345, -999.567, 98765, -123456,
-                                      99999, -87654, 54321, -100000, 87654,
-                                      -12345, 55555, -98765, 11111, -88888,
-                                      22222], 99999)
+                                        99999, -87654, 54321, -100000, 87654,
+                                        -12345, 55555, -98765, 11111, -88888,
+                                        22222]), 99999)
 
     def test_float_large_list(self):
         """Method to Test for large  floats"""
@@ -76,7 +76,7 @@ class Test_max_integer(unittest.TestCase):
                                          0.47120480947220955, 2.5056796257122915,
                                          1.3349487122618868, 0.08451917751917885,
                                          1.0157082402123356, 29.496355326217376,
-                                         10.171800729369348, 1.1263544935158727],
+                                         10.171800729369348, 1.1263544935158727]),
                                          29.496355326217376)
 
     def test_str(self):
@@ -85,7 +85,7 @@ class Test_max_integer(unittest.TestCase):
 
     def test_list_of_strings(self):
         """Method to Test for a list of strings argument"""
-        self.assertEqual(max_integer(["laila", "hi", "ebrahim"], "laila")
+        self.assertEqual(max_integer(["laila", "hi", "ebrahim"]), "laila")
 
      def test_lists_of_ints(self):
         """Method to Test for  a list of int lists"""
@@ -98,7 +98,7 @@ class Test_max_integer(unittest.TestCase):
 
     def test_nan(self):
         """Method to Test for a list contain nan"""
-        self.assertEqual(max_integer([1, 55, float('nan'), 55)
+        self.assertEqual(max_integer([1, 55, float('nan')]), 55)
 
     def test_infinity(self):
         """Method to Test for a list contain infinity"""
@@ -106,7 +106,7 @@ class Test_max_integer(unittest.TestCase):
 
     def test_number_string(self):
         """Method to Test for a string conatin numbers"""
-        self.assertEqual(max_integer("198762", "9")
+        self.assertEqual(max_integer("198762"), "9")
 
     def test_mixed_list(self):
         """Method to Test for a mixed list"""
@@ -118,7 +118,7 @@ class Test_max_integer(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    def test_dictionary(self)
+    def test_dictionary(self):
         """Method to Test for a dictionary argument"""
         with self.assertRaises(TypeError):
             max_integer([{20: 23, 14: 45}, {"a": "b"}])
