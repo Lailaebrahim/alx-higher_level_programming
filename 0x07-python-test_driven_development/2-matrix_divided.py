@@ -40,3 +40,8 @@ def matrix_divided(matrix, div):
         div_matrix.append(new_row)
 
     return div_matrix
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/0-add_integer.txt")

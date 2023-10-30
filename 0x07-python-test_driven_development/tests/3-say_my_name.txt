@@ -12,9 +12,41 @@ Test correct strings:
     My name is Laila Ebrahim
 
 Test for first name only:
-    >>> say_my_name("Laila") #doctest: +REPORT_NDIFF
-    My name is Laila
+    >>> say_my_name("Laila")
+    My name is Laila 
 
 Test lastname is empty:
-	>>> say_my_name("hello", "") #doctest: +REPORT_NDIFF
-	My name is hello
+     >>> say_my_name("Laila", "")
+     My name is Laila 
+
+Test first name is empty:
+      >>> say_my_name("", "Laila")
+      My name is  Laila
+
+Test for empty first and last name empty:
+     >>> say_my_name("", "")
+     My name is  
+
+Test for first name is not string:
+     >>> say_my_name(33, "Laila")
+     Traceback (most recent call last):
+     ...
+     TypeError: first_name must be a string
+
+Test for last name is not string:
+    >>> say_my_name("hello", 98)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test not str arg1 arg2:
+    >>> say_my_name(91, 98)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test for missing first name:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
