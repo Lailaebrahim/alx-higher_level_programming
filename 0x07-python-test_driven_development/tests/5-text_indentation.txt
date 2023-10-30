@@ -1,0 +1,95 @@
+The ``5-text_indentation`` module
+============================
+
+Using ``text_indentation``
+---------------------
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test for normal string:
+    >>> text_indentation("Laila Ebrahim.Age 21")
+    Laila Ebrahim.
+    <BLANKLINE>
+    Age 21
+
+Test for a string without delimiter:
+    >>> text_indentation("Laila Ebrahim")
+    Laila Ebrahim
+
+Test for a string with spaces:
+    >>> text_indentation("    Laila Ebrahim    ")
+    Laila Ebrahim
+
+Test for only a newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test for only delimiters:
+     >>> text_indentation("?.:")
+     ?
+     <BLANKLINE>
+     .
+     <BLANKLINE>
+     :
+     <BLANKLINE>
+
+Test for delimiters with spaces:
+     >>> text_indentation("      ?.  :  ")
+     ?
+     <BLANKLINE>
+     .
+     <BLANKLINE>
+     :
+     <BLANKLINE>
+
+Test for a string with whitespaces:
+     >>> text_indentation("        ")
+
+Test for a non string:
+     >>> text_indentation(2)
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+Test for None Value:
+     >>> text_indentation(None)
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+Test delimiters with newlines:
+     >>> text_indentation("\n?\n\n.\n:\n")
+     <BLANKLINE>
+     ?
+     <BLANKLINE>
+     <BLANKLINE>
+     <BLANKLINE>
+     .
+     <BLANKLINE>
+     <BLANKLINE>
+     :
+     <BLANKLINE>
+     <BLANKLINE>
+
+Test delimeters with spaces:
+    >>> text_indentation("Hello!   :Laila    ?    Ebrahim.    is me     ")
+    Hello!:
+    <BLANKLINE>
+    Laila?
+    <BLANKLINE>
+    Ebrahim.
+    <BLANKLINE>
+    is me
+
+Test two newlines:
+     >>> text_indentation("\n\n")
+     <BLANKLINE>
+     <BLANKLINE>
+
+Test for missing arguments:
+     >>> text_indentation()
+     Traceback (most recent call last):
+     ...
+     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
