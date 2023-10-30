@@ -1,0 +1,128 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Import function from module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test only positive 1 int argument:
+     >>> add_integer(1)
+     99
+     
+Test only negative 1 int argument:
+     >>> add_integer(-1)
+     97
+	  
+Test only 1 negative float argument:
+     >>> add_integer(-1.5)
+     97
+     
+Test only 1 positive float argument:
+     >>> add_integer(1.5)
+     99
+
+Test only 1 int argument to check default value:
+     >>> add_integer(0)
+     98
+     
+Test two positive small int arguments:
+     >>> add_integer(1, 1)
+     2
+     
+Test two positive small int arguments:
+     >>> add_integer(-1, -1)
+     -2
+
+Test one positive and one negative small int arguments:
+     >>> add_integer(1, -1)
+     0
+     
+Test two positive small float arguments:
+     >>> add_integer(1.5 , 1.6)
+     2
+     
+Test two positive small float arguments:
+     >>> add_integer(-1.5 , -1.6)
+     -2
+
+Test 0ne positive and one negative small float arguments:
+     >>> add_integer(1.5 , -1.6)
+     0
+     
+Test one float and one int positive arguments:
+     >>> add_integer(1, 1.5)
+     2
+     
+Test one float and one int negative arguments:
+     >>> add_integer(-1, -1.5)
+     -2
+
+Test two large positive int arguments:
+     >>> add_integer(9999999999999, 89999999)
+     10000089999998
+     
+Test two large negative int arguments:
+     >>> add_integer(-9999999999999, -89999999)
+     -10000089999998
+
+Test one large negative and one positive int arguments:
+     >>> add_integer(-9999999999999, 89999999)
+     -9999910000000
+     
+Test two large positive int arguments:
+     >>> add_integer(999999999.9999, 89999.999)
+     1000089998
+
+Test two large negative int arguments:
+     >>> add_integer(-999999999.9999, -89999.999)
+     -1000089998
+     
+
+Test one large negative and one positive int arguments:
+     >>> add_integer(-999999999.9999, 89999.999)
+     -999910000
+
+Add infinity:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Add nan:
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Test second arg invalid:
+
+    >>> add_integer(1, [])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Test two arguments are None:
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Test two arguments are strings:
+
+    >>> add_integer("HI", "HI")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Test float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+		    
