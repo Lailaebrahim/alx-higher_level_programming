@@ -3,7 +3,12 @@
 
 
 class Rectangle:
-    """A class to represent rectangle."""
+    """A class to represent rectangle.
+       
+       Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+    
+    """
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
@@ -11,6 +16,7 @@ class Rectangle:
                width (int): The width of the new rectangle.
                height (int): The height of the new rectangle.
         """
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -77,3 +83,8 @@ class Rectangle:
         """Return the string representation of the Rectangle."""
         return ("Rectangle(" + str(self.__width) +
                 ", " + str(self.__height) + ")")
+
+    def __del__(self):
+        """Print a message for deletion of a Rectangle."""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
