@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def lookup(obj):
     """
        Get the attributes and methods of the object
