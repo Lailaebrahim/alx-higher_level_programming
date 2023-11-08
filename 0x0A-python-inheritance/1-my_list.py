@@ -9,4 +9,5 @@ class MyList(list):
         print_sorted :Method to sort list and printed
     """
     def print_sorted(self):
-        self.print_sorted()
+        """Method to sort list and print them sorted assuming the elements are all ints"""
+        print(sorted(self))
