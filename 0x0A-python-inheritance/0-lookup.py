@@ -7,5 +7,5 @@ def lookup(obj):
        :return: a list of all the attributes found for thr object
     """
     attributes_and_methods = dir(obj)
-    filtered_attributes_and_methods = [item for item in attributes_and_methods if not item.startswith("__")]
+    filtered_attributes_and_methods = [item for item in attributes_and_methods]
     return filtered_attributes_and_methods
