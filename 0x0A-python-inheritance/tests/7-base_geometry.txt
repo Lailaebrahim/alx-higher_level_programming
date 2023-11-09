@@ -18,7 +18,7 @@ Test for a zero value
 >>> bg.integer_validator("my_int", 0)
 Traceback (most recent call last):
 ...
-my_int  must be greater than 0
+ValueError: my_int must be greater than 0
 
 
 Test for a negative value
@@ -26,7 +26,7 @@ Test for a negative value
 >>> bg.integer_validator("my_int", -12)
 Traceback (most recent call last):
 ...
-my_int  must be greater than 0
+ValueError: my_int must be greater than 0
 
 
 Test for a float:
@@ -35,7 +35,8 @@ Test for a float:
 >>> bg.integer_validator("my_int", 1.2)
 Traceback (most recent call last):
 ...
-my_int  must be an integer
+TypeError: my_int must be an integer
+
 
 
 Test for a string:
@@ -44,7 +45,8 @@ Test for a string:
 >>> bg.integer_validator("my_int", "laila")
 Traceback (most recent call last):
 ...
-my_int  must be an integer
+TypeError: my_int must be an integer
+
 
 Test for None:
 
@@ -52,7 +54,7 @@ Test for None:
 >>> bg.integer_validator("my_int", None)
 Traceback (most recent call last):
 ...
-my_int  must be an integer
+TypeError: my_int must be an integer
 
 
 Test for an empty list:
@@ -60,21 +62,21 @@ Test for an empty list:
 >>> bg.integer_validator("my_int", [])
 Traceback (most recent call last):
 ...
-my_int  must be an integer
+TypeError: my_int must be an integer
 
 Test for a tuble:
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", (1, 2, 3))
 Traceback (most recent call last):
 ...
-my_int  must be an integer
+TypeError: my_int must be an integer
 
 Test for a dictionary:
 >>> bg = BaseGeometry()
->>> bg.integer_validator("my_int", {"Hi" : 12})
+>>> bg.integer_validator("my_int", {'name': 'laila'})
 Traceback (most recent call last):
 ...
-my_int  must be an integer
+TypeError: my_int must be an integer
 
 
 Test for missing arguments:
@@ -82,7 +84,7 @@ Test for missing arguments:
 >>> bg.integer_validator("my_int")
 Traceback (most recent call last):
 ...
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
 Test for missing Two arguments:
 
@@ -90,7 +92,7 @@ Test for missing Two arguments:
 >>> bg.integer_validator()
 Traceback (most recent call last):
 ...
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 
 Test for passing three arguments:
@@ -98,7 +100,8 @@ Test for passing three arguments:
 >>> bg.integer_validator("name", 1, 2)
 Traceback (most recent call last):
 ...
-TypeError: integer_validator() takes 3 positional arguments but 4 were given
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
 
 Test for printing area:
 >>> bg = BaseGeometry()
@@ -112,11 +115,11 @@ Test for passing argument to  area:
 >>> bg.area(10)
 Traceback (most recent call last):
 ...
-TypeError: area() takes 1 positional argument but 2 were given
+TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
 
 Test for passing argument to  area:
 >>> bg = BaseGeometry()
 >>> bg.area(10, 10)
 Traceback (most recent call last):
 ...
-TypeError: area() takes 1 positional argument but 3 were given
+TypeError: BaseGeometry.area() takes 1 positional argument but 3 were given
