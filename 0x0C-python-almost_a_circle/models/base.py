@@ -11,7 +11,6 @@ class Base:
     Attributes:
         __nb_objects (int): to store number of objects.
     """
-
     __nb_objects = 0
 
     def __int__(self, id=None):

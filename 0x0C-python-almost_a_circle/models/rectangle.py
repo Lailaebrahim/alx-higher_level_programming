@@ -13,13 +13,11 @@ class Rectangle(Base):
             x (int): The x Coordinate of the new Rectangle.
             y (int): The y Coordinate of the new Rectangle.
             id (int): The identity of the new Rectangle.
-
         Raises:
             TypeError: if width or height is not an int.
             TypeError: if x or y is not an int.
             ValueError: if width or height is <= 0.
             ValueError: if x or y < 0
-
         """
         self.width = width
         self.height = height
@@ -107,7 +105,18 @@ class Rectangle(Base):
                 print()
                 new_line -= 1
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """Method that  that assigns an argument to each attribute.
+        Args:
+            *args (ints) :
+                1st argument should be the id attribute
+                2nd argument should be the width attribute
+                3rd argument should be the height attribute
+                4th argument should be the x attribute
+                5th argument should be the y attribute
+
+            **kwargs (dict): New key/value pairs of attributes.
+        """
         if args and len(args) != 0:
             count = 0
             for arg in args:
@@ -124,8 +133,22 @@ class Rectangle(Base):
                     self.x = arg
                 elif count == 4:
                     self.y = arg
-        else:
-            raise ValueError("update() expects 5 arguments")
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     def __str__(self):
         """Magic function to handle calling print function on rectangle object"""
