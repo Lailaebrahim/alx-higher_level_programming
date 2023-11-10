@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module for Rectangle class which is a subclass of Base class"""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
