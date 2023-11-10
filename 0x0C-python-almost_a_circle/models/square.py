@@ -69,3 +69,7 @@ class Square(Rectangle):
     def __str__(self):
         """Magic function to handle calling print function on square object"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def to_dictionary(self):
+        """Method to return dictionary representation of Square"""
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
