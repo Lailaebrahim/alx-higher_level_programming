@@ -13,7 +13,7 @@ class Base:
     """
     __nb_objects = 0
 
-    def __int__(self, id=None):
+    def __init__(self, id=None):
         """Initialize a new Base object.
 
         Args:
