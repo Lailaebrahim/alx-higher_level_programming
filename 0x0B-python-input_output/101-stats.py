@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """
 A Module that reads from standard input and computes metrics.
 
