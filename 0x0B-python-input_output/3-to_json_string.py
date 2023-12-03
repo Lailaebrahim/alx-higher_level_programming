@@ -2,6 +2,8 @@
 """
 Module to define a method that return JSON representation of an obj (string)
 """
+
+
 import json
 
 
