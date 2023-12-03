@@ -11,5 +11,5 @@ def write_file(filename="", text=""):
     :param text: text to be appended
     :return: number of appended characters
     """
-    with open(filename, "a", encoding="utf-8") as file:
+    with open(filename, "a") as file:
         return file.write(text)
