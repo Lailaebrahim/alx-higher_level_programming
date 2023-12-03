@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module to define a method that return JSON representation of an obj (string)
+Module to define a method that return
+JSON representation of an obj (string)
 """
 
 
