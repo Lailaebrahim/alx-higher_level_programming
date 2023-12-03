@@ -25,5 +25,6 @@ class Student:
 
         :return: Dictionary representation of the Student obj.
         """
-        dic = {"first_name": self.first_name, "last_name": self.last_name, "age": self.age}
+        dic = {"first_name": self.first_name, "last_name": self.last_name,
+               "age": self.age}
         return dic
