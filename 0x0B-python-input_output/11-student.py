@@ -51,9 +51,11 @@ class Student:
         :param json: The key/value pairs to replace attributes with.
         :return:
         """
-        if json == {}:
+        '''        if json == {}:
             return
         else:
             self.first_name = json["first_name"]
             self.last_name = json["last_name"]
-            self.age = json["age"]
+            self.age = json["age"]'''
+        for key, value in json.items():
+            setattr(key, value)
