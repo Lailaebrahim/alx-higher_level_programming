@@ -52,9 +52,7 @@ class Student:
         :return:
         """
         if json == {}:
-            self.first_name = ""
-            self.last_name = ""
-            self.age = ""
+            return
         else:
             self.first_name = json["first_name"]
             self.last_name = json["last_name"]
