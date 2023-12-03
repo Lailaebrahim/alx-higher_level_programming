@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module that adds all arguments to a Python list,
-and then save them to a file
+Module that adds all arguments to a Python list and then
+save them to a file
 it load content by load_from_json_file module
 and load the new data by save_to_json_file.
 """
