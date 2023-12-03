@@ -2,7 +2,6 @@
 """
 Module to define a mehthod that read from a file
 """
-import os
 
 
 def read_file(filename=""):
