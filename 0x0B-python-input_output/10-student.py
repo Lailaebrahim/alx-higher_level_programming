@@ -23,7 +23,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        A method that retrieves a dictionary representation of a Student instance
+        A method that retrieves a dictionary rep of a Student
         If attrs is a list of strings, only attribute names contained
         in this list must be retrieved.
         Otherwise, all attributes must be retrieved
@@ -31,16 +31,16 @@ class Student:
         :return:
         """
         dic = {}
-        if isinstance(attrs, list) and all(isinstance(item, str) for item in attrs):
-            for item in attrs:
-                if item in ['first_name', 'last_name', 'age']:
-                    if item == "first_name":
-                        dic.update(first_name=self.first_name)
-                    elif item == "last_name":
-                        dic.update(last_name=self.last_name)
-                    elif item == "age":
-                        dic.update(age=self.age)
+        if isinstance(attrs, list):
+            if all(isinstance(item, str) for item in attrs):
+                for item in attrs:
+                    if item in ['first_name', 'last_name', 'age']:
+                        if item == "first_name":
+                            dic.update(first_name=self.first_name)
+                        elif item == "last_name":
+                            dic.update(last_name=self.last_name)
+                        elif item == "age":
+                            dic.update(age=self.age)
             return dic
         else:
             return self.__dict__
-
