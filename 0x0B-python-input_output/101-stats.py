@@ -30,26 +30,26 @@ if __name__ == "__main__":
     count = 0
 
     try:
-        for l in sys.stdin:
+        for line in sys.stdin:
             if count == 10:
                 print_stats(size, status_codes)
                 count = 1
             else:
                 count += 1
 
-            l = l.split()
+            line = line.split()
 
             try:
-                size += int(l[-1])
+                size += int(line[-1])
             except (IndexError, ValueError):
                 pass
 
             try:
-                if l[-2] in valid_codes:
-                    if status_codes.get(l[-2], -1) == -1:
-                        status_codes[l[-2]] = 1
+                if line[-2] in valid_codes:
+                    if status_codes.get(line[-2], -1) == -1:
+                        status_codes[line[-2]] = 1
                     else:
-                        status_codes[l[-2]] += 1
+                        status_codes[line[-2]] += 1
             except IndexError:
                 pass
 
