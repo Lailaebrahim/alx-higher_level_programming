@@ -58,4 +58,4 @@ class Student:
             self.last_name = json["last_name"]
             self.age = json["age"]'''
         for key, value in json.items():
-            setattr(key, value)
+            setattr(self, key, value)
