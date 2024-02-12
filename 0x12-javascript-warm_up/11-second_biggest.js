@@ -1,6 +1,6 @@
 #!/usr/bin/node
-if (process.argv.length === 2 || process.argv.length === 3) {
-  console.log(0);
+if (process.argv.length <= 3) {
+  console.log('0');
 } else {
   let max = Number.MIN_VALUE;
   let secondMax = Number.MIN_VALUE;
