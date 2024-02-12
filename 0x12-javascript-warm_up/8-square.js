@@ -2,11 +2,12 @@
 if (isNaN(process.argv[2]) || process.argv[2] === undefined) {
   console.log('Missing size');
 } else {
-  for (let num = parseInt(process.argv[2]); num > 0; num--) {
-    let output = '';
-    for (let num = parseInt(process.argv[2]); num > 0; num--) {
-      output += 'x';
-    }
+    let size = parseInt(process.argv[2]);
+    for (let row = 0; row < size; row++) {
+      let output = '';
+      for (let col = 0; col < size; col++) {
+        output += 'x';
+      }
     console.log(output);
-  }
+    }
 }
