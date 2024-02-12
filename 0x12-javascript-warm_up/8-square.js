@@ -6,7 +6,7 @@ if (isNaN(process.argv[2]) || process.argv[2] === undefined) {
   for (let row = 0; row < size; row++) {
     let output = '';
     for (let col = 0; col < size; col++) {
-      output += 'x';
+      output += 'X';
     }
     console.log(output);
   }
