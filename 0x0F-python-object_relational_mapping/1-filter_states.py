@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+"""lists all states with a name starting with from the DS hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
 
 def list_states(username, password, db_name):
-    db = MySQLdb.connect(host=username, port=3306, user="root", passwd=password, db=db_name)
+    db = MySQLdb.connect(host=username, port=3306, user="root",
+                         passwd=password, db=db_name)
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     rows = cur.fetchall()
