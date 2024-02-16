@@ -8,7 +8,9 @@ def list_states(username, password, db_name, st_search):
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=db_name)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = {} ORDER BY id ASC"
+    cur.execute("""SELECT * FROM states
+                   WHERE name LIKE BINARY '{}'
+                   ORDER BY id ASC"""
                 .format(st_search))
     rows = cur.fetchall()
     for row in rows:
