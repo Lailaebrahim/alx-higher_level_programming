@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to print all states"""
+"""Script to delete all states"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -12,6 +12,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for instance in session.query(State).filter(State.name.like('%a%')).order_by(State.id):
+    for instance in session.query(State).filter(State.name.like('%a%')):
         session.delete(instance)
     session.commit()
