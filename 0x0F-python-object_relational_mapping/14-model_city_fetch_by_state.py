@@ -15,4 +15,4 @@ if __name__ == "__main__":
     session = Session()
     for instance in (session.query(State.name, City.id, City.name)
                      .filter(State.id == City.state_id).order_by(City.id)):
-        print(instance[0], ": (", instance[1], ") ", instance[3])
+        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
