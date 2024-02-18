@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Module define state class"""
+"""Module define state class
+Where there is a ont to many relationship between state and city class
+where each state can have many cities connected to it
+also all, delete-orphan automatically delete all the cities related toa
+A state when this state is deleted"""
 from sqlalchemy import Column, String, Integer, MetaData
 from sqlalchemy.orm import  relationship
 from sqlalchemy.ext.declarative import declarative_base
