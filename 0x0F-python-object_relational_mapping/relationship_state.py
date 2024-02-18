@@ -7,7 +7,6 @@ A state when this state is deleted"""
 from sqlalchemy import Column, String, Integer, MetaData
 from sqlalchemy.orm import  relationship
 from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import City
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
 
