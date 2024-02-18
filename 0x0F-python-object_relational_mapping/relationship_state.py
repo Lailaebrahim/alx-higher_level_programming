@@ -5,7 +5,7 @@ where each state can have many cities connected to it
 also all, delete-orphan automatically delete all the cities related toa
 A state when this state is deleted"""
 from sqlalchemy import Column, String, Integer, MetaData
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 from relationship_city import City
 
@@ -18,5 +18,5 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, nullable=False, unique=True, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship('City', cascade='all, delete-orphan', backref='state', lazy='dynamic')
+    cities = relationship('City', backref=backref('state', cascade='all, delete-orphan'))
     
