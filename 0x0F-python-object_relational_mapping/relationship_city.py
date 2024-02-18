@@ -2,7 +2,6 @@
 """Module define state class"""
 from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base
-from sqlalchemy.orm import relationship
 
 
 class City(Base):
