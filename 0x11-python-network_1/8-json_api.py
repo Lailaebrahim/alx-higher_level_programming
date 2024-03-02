@@ -8,7 +8,7 @@ import requests
 
 if __name__ == "__main__":
     data = {'q': sys.argv[1] if len(sys.argv) >= 2 else ""}
-    res = requests.post(sys.argv[1], data=data)
+    res = requests.post("http://0.0.0.0:5000/search_user", data=data)
     res_type = res.headers['content-type']
 
     if res_type == 'application/json':
