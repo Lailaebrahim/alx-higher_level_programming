@@ -6,6 +6,7 @@ import requests
 
 
 if __name__ == "__main__":
-    res = requests.get("https://api.github.com/user",  auth=(sys.argv[1], sys.argv[2]))
+    res = requests.get("https://api.github.com/user",
+                       auth=(sys.argv[1], sys.argv[2]))
     js = res.json()
     print(js.get('id'))
