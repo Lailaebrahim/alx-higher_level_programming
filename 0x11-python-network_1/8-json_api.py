@@ -8,7 +8,7 @@ import requests
 
 if __name__ == "__main__":
     data = {'q': sys.argv[1] if len(sys.argv) >= 2 else ""}
-    res = requests.post(sys[1], data)
+    res = requests.post(sys.argv[1], data=data)
     res_type = res.headers['content-type']
 
     if res_type == 'application/json':
