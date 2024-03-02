@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if res_type == 'application/json':
         id = res.json().get('id')
         name = res.json().get('name')
-        if id and name:
+        if res.json() != {} and id and name:
             print("[{}] {}".format(id, name))
         else:
             print('No result')
