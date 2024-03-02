@@ -14,4 +14,4 @@ if __name__ == "__main__":
         sha = val.get('sha')
         author = val.get('commit').get('author').get('name')
         print("{}: {}".format(sha, author))
-    print(res)
+        
