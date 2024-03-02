@@ -7,17 +7,15 @@ import requests
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 2:
-        data = {'q': sys.argv[1]}
-    else:
-        data = {'q': ""}
+    data = {'q': sys.argv[1] if len(sys.argv) >= 2 else ""}
     res = requests.post(sys[1], data)
     res_type = res.headers['content-type']
 
     if res_type == 'application/json':
-        id = res.json().get('id')
-        name = res.json().get('name')
-        if res.json() != {} and id and name:
+        _res = res.json()
+        id = _res.get('id')
+        name = _res.get('name')
+        if _res != {} and id and name:
             print("[{}] {}".format(id, name))
         else:
             print('No result')
