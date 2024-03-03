@@ -9,9 +9,13 @@ import requests
 if __name__ == "__main__":
     url = ("https://api.github.com/repos/{}/{}/commits"
            .format(argv[1], argv[2]))
-    url = url + "?per_page=10"
     res = requests.get(url).json()
+    commit_num =0
     for val in res:
-        sha = val.get('sha')
-        author = val.get('commit').get('author').get('name')
-        print("{}: {}".format(sha, author))
+        if commit_num > 9:
+            break
+        else:
+            sha = val.get('sha')
+            author = val.get('commit').get('author').get('name')
+            print("{}: {}".format(sha, author))
+            commit_num += 1
